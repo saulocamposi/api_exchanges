@@ -10,7 +10,13 @@ var mbCtrl = function($scope, $http, $resource) {
     $scope.mtc = response.data;
   });
 
+  $http.get("services.php?brand=negociecoins").then(function(response) {
+    $scope.negociecoins = response.data;
+  });
 
+  $http.jsonp("https://api.blinktrade.com/api/v1/BRL/ticker?crypto_currency=BTC&callback=JSON_CALLBACK").then(function(response) {
+    $scope.foxbit = response.data;
+  });
 
 
 
